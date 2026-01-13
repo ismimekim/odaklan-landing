@@ -10,123 +10,171 @@ export default function LibraryStats() {
             num: '01',
             Icon: Filter,
             title: 'Filtreleme',
-            desc: <>Videodaki <strong>gereksiz detayları</strong> at, sadece sınavda çıkacak bilgilere odaklan.</>,
+            desc: 'Videodaki gereksiz detayları at, sadece sınavda çıkacak bilgilere odaklan.',
         },
         {
             num: '02',
             Icon: Network,
             title: 'Yapılandırma',
-            desc: <>Karmaşık konuları zihnine kazınacak <strong>basit kavram haritalarına</strong> dönüştür.</>,
+            desc: 'Karmaşık konuları zihnine kazınacak basit kavram haritalarına dönüştür.',
         },
         {
             num: '03',
             Icon: HelpCircle,
             title: 'Sorgulama',
-            desc: <>AI'ın sana <strong>zorlayıcı sorular</strong> sormasını sağla. Gerçek öğrenme burada başlar.</>,
+            desc: 'AI\'ın sana zorlayıcı sorular sormasını sağla. Gerçek öğrenme burada başlar.',
         },
         {
             num: '04',
             Icon: Lightbulb,
             title: 'Uygulama',
-            desc: <>Konuyu farklı açılardan gören <strong>orijinal sorular</strong> türet ve anında çöz.</>,
+            desc: 'Konuyu farklı açılardan gören orijinal sorular türet ve anında çöz.',
         },
         {
             num: '05',
             Icon: Brain,
             title: 'Hafıza',
-            desc: <>Bilgiyi kısa süreliden <strong>uzun süreli hafızaya</strong> atan özel tekrar teknikleri.</>,
+            desc: 'Bilgiyi kısa süreliden uzun süreli hafızaya atan özel tekrar teknikleri.',
         },
         {
             num: '06',
             Icon: MapPin,
             title: 'Planlama',
-            desc: <>Bir sonraki <strong>adımını belirle</strong>, eksiklerini kapat ve ilerle.</>,
+            desc: 'Bir sonraki adımını belirle, eksiklerini kapat ve ilerle.',
         },
     ]
 
     return (
         <section
             id="method"
-            className="py-[var(--spacing-24)]"
             style={{
+                paddingTop: 'clamp(80px, 10vw, 120px)',
+                paddingBottom: 'clamp(80px, 10vw, 120px)',
                 background: '#ffffff',
             }}
         >
             <div className="container">
-                <div ref={sectionRef} className="reveal text-center mb-[var(--spacing-14)]">
+                {/* Apple-style Section Header */}
+                <div ref={sectionRef} className="reveal text-center" style={{ marginBottom: 'clamp(56px, 8vw, 80px)' }}>
                     <h2
-                        className="mb-[var(--spacing-4)]"
                         style={{
-                            fontSize: 'clamp(36px, 6vw, 56px)',
+                            fontSize: 'clamp(40px, 8vw, 72px)',
                             fontWeight: 800,
-                            letterSpacing: '-0.03em',
-                            color: 'var(--color-neutral-100)',
+                            letterSpacing: '-0.05em',
+                            lineHeight: 0.95,
+                            color: '#1d1d1f',
+                            marginBottom: '16px',
                         }}
                     >
-                        6 Adımlık <span style={{
+                        6 Adımlık{' '}
+                        <span style={{
                             background: 'linear-gradient(135deg, #059669 0%, #22c55e 100%)',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
                             backgroundClip: 'text',
-                        }}>Aktif Öğrenme</span>
+                        }}>
+                            Aktif Öğrenme
+                        </span>
                     </h2>
                     <p
                         style={{
-                            fontSize: 'clamp(16px, 2.5vw, 20px)',
-                            color: '#1d1d1f',
-                            fontWeight: 500,
+                            fontSize: 'clamp(17px, 2.2vw, 21px)',
+                            fontWeight: 400,
+                            lineHeight: 1.5,
+                            color: '#86868b',
+                            maxWidth: '640px',
+                            margin: '0 auto',
                         }}
                     >
-                        Bu sistem, herhangi bir <strong style={{ color: '#1d1d1f', fontWeight: 600 }}>YouTube ders videosunu</strong> YKS netine dönüştürür.
+                        Bu sistem, herhangi bir YouTube ders videosunu YKS netine dönüştürür.
                     </p>
                 </div>
 
-                {/* Unified Cards */}
-                <div ref={cardsRef} className="reveal-stagger grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {/* Apple-style Card Grid */}
+                <div
+                    ref={cardsRef}
+                    className="reveal-stagger grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+                >
                     {steps.map((step, i) => (
                         <div
                             key={i}
-                            className="card-depth p-5"
+                            style={{
+                                borderRadius: '18px',
+                                background: '#ffffff',
+                                padding: '28px',
+                                border: '1px solid rgba(0,0,0,0.06)',
+                                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-4px)'
+                                e.currentTarget.style.boxShadow = '0 12px 24px rgba(0,0,0,0.08)'
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)'
+                                e.currentTarget.style.boxShadow = 'none'
+                            }}
                         >
-                            {/* Header: Icon + Step Badge */}
-                            <div className="flex items-center justify-between mb-4">
+                            {/* Header: Step Badge + Icon */}
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
+                                {/* Step Badge - iOS Style */}
+                                <span
+                                    style={{
+                                        fontSize: '11px',
+                                        fontWeight: 600,
+                                        letterSpacing: '0.06em',
+                                        color: '#86868b',
+                                        padding: '5px 10px',
+                                        background: '#f5f5f7',
+                                        borderRadius: '6px',
+                                    }}
+                                >
+                                    ADIM {step.num}
+                                </span>
+
                                 {/* Icon Container */}
-                                <div className="icon-container">
+                                <div
+                                    style={{
+                                        width: '40px',
+                                        height: '40px',
+                                        borderRadius: '10px',
+                                        background: 'rgba(5, 150, 105, 0.08)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                    }}
+                                >
                                     <step.Icon
                                         style={{
-                                            width: '22px',
-                                            height: '22px',
-                                            color: 'var(--accent-primary)',
-                                            strokeWidth: 1.75,
+                                            width: '20px',
+                                            height: '20px',
+                                            color: '#059669',
+                                            strokeWidth: 1.8,
                                         }}
                                     />
                                 </div>
-
-                                {/* Step Badge */}
-                                <span className="badge">
-                                    ADIM {step.num}
-                                </span>
                             </div>
 
-                            {/* Title */}
+                            {/* Title - Bold, Tight */}
                             <h3
-                                className="mb-3"
                                 style={{
-                                    fontSize: '18px',
-                                    fontWeight: 600,
+                                    fontSize: '20px',
+                                    fontWeight: 700,
                                     color: '#1d1d1f',
-                                    letterSpacing: '-0.01em',
+                                    letterSpacing: '-0.02em',
+                                    marginBottom: '10px',
+                                    lineHeight: 1.2,
                                 }}
                             >
                                 {step.title}
                             </h3>
 
-                            {/* Description */}
+                            {/* Description - Generous Line-Height */}
                             <p
                                 style={{
-                                    fontSize: '14px',
-                                    lineHeight: 1.7,
-                                    color: '#48484a',
+                                    fontSize: '15px',
+                                    lineHeight: 1.65,
+                                    color: '#6e6e73',
+                                    fontWeight: 400,
                                 }}
                             >
                                 {step.desc}

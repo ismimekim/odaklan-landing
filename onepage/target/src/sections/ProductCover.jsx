@@ -6,28 +6,20 @@ export default function ProductCover() {
     const cardsRef = useScrollReveal({ threshold: 0.2 })
 
     const oldMethod = [
-        { text: 'Saatlerce video izlemek', bold: 'Saatlerce' },
-        { text: 'Renkli notlar çıkarmak', bold: 'notlar' },
-        { text: '"Konuyu bitirdim" sanmak', bold: 'sanmak' },
-        { text: 'Ezber yapmaya çalışmak', bold: 'Ezber' },
-        { text: 'Sınavda hatırlayamamak', bold: 'hatırlayamamak' },
+        'Saatlerce video izlemek',
+        'Renkli notlar çıkarmak',
+        '"Konuyu bitirdim" sanmak',
+        'Ezber yapmaya çalışmak',
+        'Sınavda hatırlayamamak',
     ]
 
     const newMethod = [
-        { text: 'Videoyu analiz ettirmek', bold: 'analiz' },
-        { text: 'Soru türettirip çözmek', bold: 'Soru türettirip' },
-        { text: 'Kavram haritası çıkarmak', bold: 'Kavram haritası' },
-        { text: 'AI ile tartışarak öğrenmek', bold: 'tartışarak' },
-        { text: 'Kalıcı hafızaya atmak', bold: 'Kalıcı hafızaya' },
+        'Videoyu analiz ettirmek',
+        'Soru türettirip çözmek',
+        'Kavram haritası çıkarmak',
+        'AI ile tartışarak öğrenmek',
+        'Kalıcı hafızaya atmak',
     ]
-
-    const renderWithBold = (text, bold) => {
-        const parts = text.split(bold)
-        if (parts.length === 2) {
-            return <>{parts[0]}<strong style={{ fontWeight: 700 }}>{bold}</strong>{parts[1]}</>
-        }
-        return text
-    }
 
     return (
         <section
@@ -39,15 +31,16 @@ export default function ProductCover() {
             }}
         >
             <div className="container relative z-10">
-                {/* Apple-style Large Heading */}
-                <div ref={sectionRef} className="reveal text-center mb-[var(--spacing-14)]">
+                {/* Apple-style Ultra-Tight Typography */}
+                <div ref={sectionRef} className="reveal text-center mb-[var(--spacing-16)]">
                     <h2
                         style={{
-                            fontSize: 'clamp(44px, 8vw, 72px)',
+                            fontSize: 'clamp(48px, 9vw, 80px)',
                             fontWeight: 800,
-                            letterSpacing: '-0.04em',
-                            lineHeight: 1.05,
-                            color: 'var(--color-neutral-100)',
+                            letterSpacing: '-0.05em',
+                            lineHeight: 0.95,
+                            color: '#1d1d1f',
+                            marginBottom: '20px',
                         }}
                     >
                         Oyunun kurallarını{' '}
@@ -58,127 +51,193 @@ export default function ProductCover() {
                             backgroundClip: 'text',
                         }}>değiştir.</span>
                     </h2>
+                    <p
+                        style={{
+                            fontSize: 'clamp(17px, 2.2vw, 21px)',
+                            fontWeight: 400,
+                            lineHeight: 1.5,
+                            color: '#86868b',
+                            maxWidth: '600px',
+                            margin: '0 auto',
+                        }}
+                    >
+                        Pasif izlemede saat harcamak yerine, aktif öğrenmeyle her dakikayı nete çevir.
+                    </p>
                 </div>
 
-                {/* Unified Cards Grid */}
+                {/* Apple-style Comparison Grid */}
                 <div ref={cardsRef} className="reveal-stagger grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
 
-                    {/* Old Method - Error Tint Card */}
+                    {/* Passive Method - Minimal, Muted */}
                     <div
-                        className="card-depth card-tint-error rounded-[16px] overflow-hidden"
+                        style={{
+                            borderRadius: '18px',
+                            background: '#f5f5f7',
+                            padding: 'clamp(24px, 4vw, 32px)',
+                            border: '1px solid rgba(0,0,0,0.04)',
+                        }}
                     >
-                        {/* Card Header */}
-                        <div
-                            className="p-5 pb-4"
-                            style={{
-                                borderBottom: '1px solid rgba(0,0,0,0.04)',
-                            }}
-                        >
-                            <div className="flex items-center gap-3">
-                                <div className="icon-container" style={{ background: 'var(--status-error-bg)' }}>
-                                    <PlayCircle style={{ width: '20px', height: '20px', color: 'var(--status-error)' }} />
+                        {/* Header */}
+                        <div style={{ marginBottom: '24px' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                                <div
+                                    style={{
+                                        width: '32px',
+                                        height: '32px',
+                                        borderRadius: '8px',
+                                        background: 'rgba(0,0,0,0.06)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                    }}
+                                >
+                                    <PlayCircle style={{ width: '18px', height: '18px', color: '#86868b' }} />
                                 </div>
                                 <h3
                                     style={{
-                                        fontSize: '18px',
+                                        fontSize: '19px',
                                         fontWeight: 600,
                                         color: '#1d1d1f',
-                                        letterSpacing: '-0.01em',
+                                        letterSpacing: '-0.02em',
                                     }}
                                 >
                                     Eski Yöntem
                                 </h3>
-                                <span className="badge badge-error">
-                                    Pasif İzleme
-                                </span>
                             </div>
+                            <span
+                                style={{
+                                    display: 'inline-block',
+                                    fontSize: '12px',
+                                    fontWeight: 500,
+                                    letterSpacing: '0.01em',
+                                    color: '#86868b',
+                                    padding: '4px 10px',
+                                    background: 'rgba(0,0,0,0.04)',
+                                    borderRadius: '6px',
+                                }}
+                            >
+                                Pasif İzleme
+                            </span>
                         </div>
 
-                        {/* Card Content */}
-                        <div className="p-5 pt-4">
-                            <ul className="flex flex-col gap-3">
-                                {oldMethod.map((item, i) => (
-                                    <li key={i} className="flex items-center gap-3">
-                                        <div
-                                            style={{
-                                                width: '24px',
-                                                height: '24px',
-                                                borderRadius: '50%',
-                                                background: 'var(--status-error-bg)',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                flexShrink: 0,
-                                            }}
-                                        >
-                                            <X style={{ width: '12px', height: '12px', color: 'var(--status-error)', strokeWidth: 2.5 }} />
-                                        </div>
-                                        <span style={{ fontSize: '14px', color: '#1d1d1f', lineHeight: 1.5 }}>
-                                            {renderWithBold(item.text, item.bold)}
-                                        </span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                        {/* List */}
+                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                            {oldMethod.map((item, i) => (
+                                <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                                    <div
+                                        style={{
+                                            width: '20px',
+                                            height: '20px',
+                                            borderRadius: '50%',
+                                            background: 'rgba(0,0,0,0.06)',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            flexShrink: 0,
+                                            marginTop: '2px',
+                                        }}
+                                    >
+                                        <X style={{ width: '11px', height: '11px', color: '#86868b', strokeWidth: 2 }} />
+                                    </div>
+                                    <span
+                                        style={{
+                                            fontSize: '15px',
+                                            lineHeight: 1.6,
+                                            color: '#6e6e73',
+                                            fontWeight: 400,
+                                        }}
+                                    >
+                                        {item}
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
 
-                    {/* New Method - Success Tint Card (GREEN for positive) */}
+                    {/* Active Method - Vibrant, Green Accent */}
                     <div
-                        className="card-depth card-tint-success rounded-[16px] overflow-hidden"
+                        style={{
+                            borderRadius: '18px',
+                            background: 'linear-gradient(135deg, rgba(5, 150, 105, 0.04) 0%, rgba(34, 197, 94, 0.04) 100%)',
+                            padding: 'clamp(24px, 4vw, 32px)',
+                            border: '1px solid rgba(5, 150, 105, 0.12)',
+                        }}
                     >
-                        {/* Card Header */}
-                        <div
-                            className="p-5 pb-4"
-                            style={{
-                                borderBottom: '1px solid rgba(0,0,0,0.04)',
-                            }}
-                        >
-                            <div className="flex items-center gap-3">
-                                <div className="icon-container" style={{ background: 'var(--status-success-bg)' }}>
-                                    <Brain style={{ width: '20px', height: '20px', color: 'var(--status-success)' }} />
+                        {/* Header */}
+                        <div style={{ marginBottom: '24px' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                                <div
+                                    style={{
+                                        width: '32px',
+                                        height: '32px',
+                                        borderRadius: '8px',
+                                        background: 'rgba(5, 150, 105, 0.12)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                    }}
+                                >
+                                    <Brain style={{ width: '18px', height: '18px', color: '#059669' }} />
                                 </div>
                                 <h3
                                     style={{
-                                        fontSize: '18px',
+                                        fontSize: '19px',
                                         fontWeight: 600,
                                         color: '#1d1d1f',
-                                        letterSpacing: '-0.01em',
+                                        letterSpacing: '-0.02em',
                                     }}
                                 >
                                     Aktif Öğrenme
                                 </h3>
-                                <span className="badge badge-success">
-                                    AI Destekli
-                                </span>
                             </div>
+                            <span
+                                style={{
+                                    display: 'inline-block',
+                                    fontSize: '12px',
+                                    fontWeight: 600,
+                                    letterSpacing: '0.01em',
+                                    color: '#059669',
+                                    padding: '4px 10px',
+                                    background: 'rgba(5, 150, 105, 0.1)',
+                                    borderRadius: '6px',
+                                }}
+                            >
+                                AI Destekli
+                            </span>
                         </div>
 
-                        {/* Card Content */}
-                        <div className="p-5 pt-4">
-                            <ul className="flex flex-col gap-3">
-                                {newMethod.map((item, i) => (
-                                    <li key={i} className="flex items-center gap-3">
-                                        <div
-                                            style={{
-                                                width: '24px',
-                                                height: '24px',
-                                                borderRadius: '50%',
-                                                background: 'var(--status-success-bg)',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                flexShrink: 0,
-                                            }}
-                                        >
-                                            <Check style={{ width: '12px', height: '12px', color: 'var(--status-success)', strokeWidth: 2.5 }} />
-                                        </div>
-                                        <span style={{ fontSize: '14px', color: '#1d1d1f', lineHeight: 1.5 }}>
-                                            {renderWithBold(item.text, item.bold)}
-                                        </span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                        {/* List */}
+                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                            {newMethod.map((item, i) => (
+                                <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                                    <div
+                                        style={{
+                                            width: '20px',
+                                            height: '20px',
+                                            borderRadius: '50%',
+                                            background: 'rgba(5, 150, 105, 0.15)',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            flexShrink: 0,
+                                            marginTop: '2px',
+                                        }}
+                                    >
+                                        <Check style={{ width: '11px', height: '11px', color: '#059669', strokeWidth: 2.5 }} />
+                                    </div>
+                                    <span
+                                        style={{
+                                            fontSize: '15px',
+                                            lineHeight: 1.6,
+                                            color: '#1d1d1f',
+                                            fontWeight: 400,
+                                        }}
+                                    >
+                                        {item}
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </div>

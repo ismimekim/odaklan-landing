@@ -111,8 +111,7 @@ export default function SocialProof() {
                     >
                         Sorun sende değil, <span style={{
                             fontWeight: 700,
-                            fontStyle: 'italic',
-                            color: '#22c55e',
+                            color: '#1d1d1f',
                         }}>pasif izleme</span> yönteminde.
                     </p>
                 </div>
